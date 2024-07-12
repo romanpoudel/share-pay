@@ -31,7 +31,7 @@ export function Register() {
         }
         const hash = await saltAndHashPassword(pass);
         await dbConnect();
-        await User.create({ user, password: hash });
+        await User.create({ email: user, password: hash });
       }}
     >
       <label>
