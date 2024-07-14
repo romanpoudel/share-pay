@@ -5,7 +5,7 @@ import User from '@/model/user.model';
 import { registerUser } from '@/utils/db';
 import { saltAndHashPassword } from '@/utils/password';
 
-export function Register() {
+function Register() {
   return (
     <form
       action={async (formData) => {
