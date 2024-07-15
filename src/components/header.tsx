@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-import Link from 'next/link';
+import Link from "next/link";
 
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { Button } from '@/components/ui/button';
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -13,44 +13,44 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
-import { Sheet, SheetContent } from '@/components/ui/sheet';
-import { Menu } from 'lucide-react';
-import { NavItems } from '@/config';
+} from "@/components/ui/dropdown-menu";
+import { Sheet, SheetContent } from "@/components/ui/sheet";
+import { Menu } from "lucide-react";
+import { NavItems } from "@/config";
 
 export default function Header() {
   const navItems = NavItems();
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className='flex items-center h-16 px-4 border-b shrink-0 md:px-6 justify-between'>
+    <header className="flex h-16 shrink-0 items-center justify-between border-b px-4 md:px-6">
       <Link
-        href='#'
-        className='flex items-center gap-2 text-lg font-semibold md:text-base'
+        href="#"
+        className="flex items-center gap-2 text-lg font-semibold md:text-base"
         prefetch={false}
       >
-        <span className='w-8 h-8 border bg-accent rounded-full' />
+        <span className="h-8 w-8 rounded-full border bg-accent" />
         <span>Acme Inc</span>
       </Link>
 
-      <div className='ml-4 flex items-center gap-3'>
+      <div className="ml-4 flex items-center gap-3">
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button
-              variant='outline'
-              size='icon'
-              className='overflow-hidden rounded-full'
+              variant="outline"
+              size="icon"
+              className="overflow-hidden rounded-full"
             >
               <Avatar>
                 <AvatarImage
-                  src='https://github.com/shadcn.png'
-                  alt='@shadcn'
+                  src="https://github.com/shadcn.png"
+                  alt="@shadcn"
                 />
                 <AvatarFallback>CN</AvatarFallback>
               </Avatar>
             </Button>
           </DropdownMenuTrigger>
-          <DropdownMenuContent align='end'>
+          <DropdownMenuContent align="end">
             <DropdownMenuLabel>My Account</DropdownMenuLabel>
             <DropdownMenuSeparator />
             <DropdownMenuItem>Settings</DropdownMenuItem>
@@ -60,25 +60,25 @@ export default function Header() {
           </DropdownMenuContent>
         </DropdownMenu>
 
-        <button onClick={() => setIsOpen(true)} className='block sm:hidden'>
+        <button onClick={() => setIsOpen(true)} className="block sm:hidden">
           <Menu size={24} />
         </button>
 
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
-          <SheetContent side='right' className='block md:hidden'>
-            <div className='pt-4  overflow-y-auto h-fit w-full flex flex-col gap-1'>
+          <SheetContent side="right" className="block md:hidden">
+            <div className="flex h-fit w-full flex-col gap-1 overflow-y-auto pt-4">
               {navItems.map((navItem, idx) => (
                 <Link
                   key={idx}
                   href={navItem.href}
                   onClick={() => setIsOpen(false)}
-                  className={`h-full relative flex items-center whitespace-nowrap rounded-md ${
+                  className={`relative flex h-full items-center whitespace-nowrap rounded-md ${
                     navItem.active
-                      ? 'font-base text-sm bg-neutral-200 shadow-sm text-neutral-700 dark:bg-neutral-800 dark:text-white'
-                      : 'hover:bg-neutral-200  hover:text-neutral-700 text-neutral-500 dark:text-neutral-400 dark:hover:bg-neutral-800 dark:hover:text-white'
+                      ? "font-base bg-neutral-200 text-sm text-neutral-700 shadow-sm dark:bg-neutral-800 dark:text-white"
+                      : "text-neutral-500 hover:bg-neutral-200 hover:text-neutral-700 dark:text-neutral-400 dark:hover:bg-neutral-800 dark:hover:text-white"
                   }`}
                 >
-                  <div className='relative font-base text-sm py-1.5 px-2 flex flex-row items-center space-x-2 rounded-md duration-100'>
+                  <div className="font-base relative flex flex-row items-center space-x-2 rounded-md px-2 py-1.5 text-sm duration-100">
                     {navItem.icon}
                     <span>{navItem.name}</span>
                   </div>
