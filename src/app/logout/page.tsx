@@ -5,8 +5,8 @@ const page = () => {
   return (
     <form
       action={async (formData) => {
-        "use server";
-        await signOut({redirectTo: '/'});
+        'use server';
+        await signOut({ redirectTo: '/' });
       }}
     >
       <button>logout</button>

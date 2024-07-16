@@ -30,12 +30,12 @@ export function ThemeToggle({ isDropDown = false }: { isDropDown?: boolean }) {
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Button
-            variant='ghost'
-            className='inline-flex items-center mb-2 px-2 h-9 gap-2 w-full justify-start whitespace-nowrap rounded-md text-sm font-base transition-colors disabled:pointer-events-none disabled:opacity-50  focus:outline-none'
+            variant="ghost"
+            className="font-base mb-2 inline-flex h-9 w-full items-center justify-start gap-2 whitespace-nowrap rounded-md px-2 text-sm transition-colors focus:outline-none disabled:pointer-events-none disabled:opacity-50"
           >
             <Sun
               className={cn(
-                'h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0 '
+                'h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0'
               )}
             />
             <Moon
@@ -45,21 +45,21 @@ export function ThemeToggle({ isDropDown = false }: { isDropDown?: boolean }) {
             />
           </Button>
         </DropdownMenuTrigger>
-        <DropdownMenuContent align='start'>
+        <DropdownMenuContent align="start">
           <DropdownMenuItem
-            className='cursor-pointer'
+            className="cursor-pointer"
             onClick={() => setTheme('light')}
           >
             Light
           </DropdownMenuItem>
           <DropdownMenuItem
-            className='cursor-pointer'
+            className="cursor-pointer"
             onClick={() => setTheme('dark')}
           >
             Dark
           </DropdownMenuItem>
           <DropdownMenuItem
-            className='cursor-pointer'
+            className="cursor-pointer"
             onClick={() => setTheme('system')}
           >
             System
@@ -70,39 +70,39 @@ export function ThemeToggle({ isDropDown = false }: { isDropDown?: boolean }) {
   }
   return (
     <>
-      <div className='flex flex-row space-x-2 items-center rounded-full border p-1'>
+      <div className="flex flex-row items-center space-x-2 rounded-full border p-1">
         <button
           className={cn(
             theme === 'light'
-              ? 'bg-neutral-200 rounded-full'
+              ? 'rounded-full bg-neutral-200'
               : 'bg-transparent',
             'p-1'
           )}
           onClick={() => setTheme('light')}
         >
-          <Sun size={18} className='stroke-1' />
+          <Sun size={18} className="stroke-1" />
         </button>
 
         <button
           className={cn(
             theme === 'system'
-              ? 'bg-neutral-200 dark:bg-neutral-700 rounded-full'
+              ? 'rounded-full bg-neutral-200 dark:bg-neutral-700'
               : 'bg-transparent',
             'p-1'
           )}
           onClick={() => setTheme('system')}
         >
-          <Monitor size={18} className='stroke-1' />
+          <Monitor size={18} className="stroke-1" />
         </button>
 
         <button
           className={cn(
-            theme === 'dark' ? 'bg-neutral-700 rounded-full' : 'bg-transparent',
+            theme === 'dark' ? 'rounded-full bg-neutral-700' : 'bg-transparent',
             'p-1'
           )}
           onClick={() => setTheme('dark')}
         >
-          <Moon size={18} className='stroke-1' />
+          <Moon size={18} className="stroke-1" />
         </button>
       </div>
     </>

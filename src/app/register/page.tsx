@@ -36,11 +36,11 @@ function Register() {
     >
       <label>
         Email
-        <input name='email' type='email' />
+        <input name="email" type="email" />
       </label>
       <label>
         Password
-        <input name='password' type='password' />
+        <input name="password" type="password" />
       </label>
       <button>Register</button>
     </form>

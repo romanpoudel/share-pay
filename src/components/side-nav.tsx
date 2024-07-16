@@ -44,22 +44,22 @@ export default function SideNav() {
   };
 
   return (
-    <div className='pr-4'>
+    <div className="pr-4">
       <div
         className={cn(
           isSidebarExpanded ? 'w-[200px]' : 'w-[68px]',
-          'border-r transition-all duration-300 ease-in-out transform hidden sm:flex h-full bg-accent'
+          'hidden h-full transform border-r bg-accent transition-all duration-300 ease-in-out sm:flex'
         )}
       >
-        <aside className='flex h-full flex-col w-full break-words px-4 overflow-x-hidden columns-1'>
+        <aside className="flex h-full w-full columns-1 flex-col overflow-x-hidden break-words px-4">
           {/* Top */}
-          <div className='mt-4 relative pb-2'>
-            <div className='flex flex-col space-y-1'>
+          <div className="relative mt-4 pb-2">
+            <div className="flex flex-col space-y-1">
               {navItems.map((item, idx) => {
                 if (item.position === 'top') {
                   return (
                     <Fragment key={idx}>
-                      <div className='space-y-1'>
+                      <div className="space-y-1">
                         <SideNavItem
                           label={item.name}
                           icon={item.icon}
@@ -75,13 +75,13 @@ export default function SideNav() {
             </div>
           </div>
           {/* Bottom */}
-          <div className='sticky bottom-0 mt-auto whitespace-nowrap mb-4 transition duration-200 block'>
+          <div className="sticky bottom-0 mb-4 mt-auto block whitespace-nowrap transition duration-200">
             <ThemeToggle isDropDown={true} />
             {navItems.map((item, idx) => {
               if (item.position === 'bottom') {
                 return (
                   <Fragment key={idx}>
-                    <div className='space-y-1'>
+                    <div className="space-y-1">
                       <SideNavItem
                         label={item.name}
                         icon={item.icon}
@@ -96,16 +96,16 @@ export default function SideNav() {
             })}
           </div>
         </aside>
-        <div className='mt-[calc(calc(90vh)-40px)] relative'>
+        <div className="relative mt-[calc(calc(90vh)-40px)]">
           <button
-            type='button'
-            className='absolute bottom-32 right-[-12px] flex h-6 w-6 items-center justify-center border border-muted-foreground/20 rounded-full bg-accent shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out'
+            type="button"
+            className="absolute bottom-32 right-[-12px] flex h-6 w-6 items-center justify-center rounded-full border border-muted-foreground/20 bg-accent shadow-md transition-shadow duration-300 ease-in-out hover:shadow-lg"
             onClick={toggleSidebar}
           >
             {isSidebarExpanded ? (
-              <ChevronLeft size={16} className='stroke-foreground' />
+              <ChevronLeft size={16} className="stroke-foreground" />
             ) : (
-              <ChevronRight size={16} className='stroke-foreground' />
+              <ChevronRight size={16} className="stroke-foreground" />
             )}
           </button>
         </div>
@@ -126,13 +126,13 @@ export const SideNavItem: React.FC<{
       {isSidebarExpanded ? (
         <Link
           href={path}
-          className={`h-full relative flex items-center whitespace-nowrap rounded-md ${
+          className={`relative flex h-full items-center whitespace-nowrap rounded-md ${
             active
-              ? 'font-base text-sm bg-neutral-200 shadow-sm text-neutral-700 dark:bg-neutral-800 dark:text-white'
-              : 'hover:bg-neutral-200 hover:text-neutral-700 text-neutral-500 dark:text-neutral-400 dark:hover:bg-neutral-800 dark:hover:text-white'
+              ? 'font-base bg-neutral-200 text-sm text-neutral-700 shadow-sm dark:bg-neutral-800 dark:text-white'
+              : 'text-neutral-500 hover:bg-neutral-200 hover:text-neutral-700 dark:text-neutral-400 dark:hover:bg-neutral-800 dark:hover:text-white'
           }`}
         >
-          <div className='relative font-base text-sm py-1.5 px-2 flex flex-row items-center space-x-2 rounded-md duration-100'>
+          <div className="font-base relative flex flex-row items-center space-x-2 rounded-md px-2 py-1.5 text-sm duration-100">
             {icon}
             <span>{label}</span>
           </div>
@@ -143,20 +143,20 @@ export const SideNavItem: React.FC<{
             <TooltipTrigger>
               <Link
                 href={path}
-                className={`h-full relative flex items-center whitespace-nowrap rounded-md ${
+                className={`relative flex h-full items-center whitespace-nowrap rounded-md ${
                   active
-                    ? 'font-base text-sm bg-neutral-200 text-neutral-700 dark:bg-neutral-800 dark:text-white'
-                    : 'hover:bg-neutral-200 hover:text-neutral-700 text-neutral-500 dark:text-neutral-400 dark:hover:bg-neutral-800 dark:hover:text-white'
+                    ? 'font-base bg-neutral-200 text-sm text-neutral-700 dark:bg-neutral-800 dark:text-white'
+                    : 'text-neutral-500 hover:bg-neutral-200 hover:text-neutral-700 dark:text-neutral-400 dark:hover:bg-neutral-800 dark:hover:text-white'
                 }`}
               >
-                <div className='relative font-base text-sm p-2 flex flex-row items-center space-x-2 rounded-md duration-100'>
+                <div className="font-base relative flex flex-row items-center space-x-2 rounded-md p-2 text-sm duration-100">
                   {icon}
                 </div>
               </Link>
             </TooltipTrigger>
             <TooltipContent
-              side='left'
-              className='px-3 py-1.5 text-xs'
+              side="left"
+              className="px-3 py-1.5 text-xs"
               sideOffset={10}
             >
               <span>{label}</span>
