@@ -1,4 +1,20 @@
 #!/bin/sh
+
 . "$(dirname "$0")/_/husky.sh"
 
-npx --no --commitlint --edit $1
+# Get Commit Message
+commit_msg=$(cat $1)
+
+# Generate Commit Regexp Based on Allowed Types
+commit_regex="^(feat|fix|chore|refactor|test|style|docs)\(.*\): .+"
+
+# Generate Error Message
+error_msg="Aborting commit. Incorrect Commit Message. Your commit message should follow the format: type(scope): message \nAllowed types are: feat, fix, chore, refactor, test, style, docs.\nExample: feat(auth): add login feature"
+
+# Validate commit message param
+if [[ "$commit_msg" =~ $commit_regex ]]; then
+  echo ":ok_hand: Right ahead! Sailor :ok_hand:"
+else
+  echo ":-1: ${error_msg}"
+  exit 1
+fi
