@@ -15,8 +15,12 @@ import {
   FormLabel,
   FormMessage,
 } from './ui/form';
+import { useRouter } from 'next/navigation';
+import { useToast } from './ui/use-toast';
 
 export default function RegisterForm() {
+  const router = useRouter();
+  const { toast } = useToast();
   const form = useForm<Register>({
     resolver: zodResolver(registerSchema),
     defaultValues: {
@@ -28,8 +32,20 @@ export default function RegisterForm() {
   });
 
   async function onSubmit(data: Register) {
-    await new Promise((resolve) => setTimeout(resolve, 4000)); // Simulating an API request
-    console.log('Form data submitted:', data);
+    const result = await registerAction(data);
+    if (result.success) {
+      router.push('/auth/login');
+      toast({
+        title: 'Success',
+        description: result.message,
+      });
+    } else {
+      toast({
+        variant: 'destructive',
+        title: 'Uh oh! Something went wrong.',
+        description: result.message,
+      });
+    }
   }
 
   return (
