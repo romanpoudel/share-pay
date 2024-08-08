@@ -9,7 +9,7 @@ export function SubmitButton({ children }: { children: React.ReactNode }) {
 
   return (
     <Button type="submit" className="w-full" disabled={pending}>
-      {pending && <Loader className='animate-spin mr-4' size={20}/>}
+      {pending && <Loader className="mr-4 animate-spin" size={20} />}
       {children}
     </Button>
   );

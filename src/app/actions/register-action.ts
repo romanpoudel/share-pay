@@ -6,7 +6,6 @@ import { registerSchema } from '@/schemas/user.schema';
 import { saltAndHashPassword } from '@/utils/password';
 import { redirect } from 'next/navigation';
 
-
 export default async function registerAction(
   formState: any,
   formData: FormData
@@ -46,5 +45,5 @@ export default async function registerAction(
       };
     }
   }
-  redirect(`/auth/login`); 
+  redirect(`/auth/login`);
 }

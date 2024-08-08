@@ -15,6 +15,7 @@ import {
   FormLabel,
   FormMessage,
 } from './ui/form';
+import { set } from 'mongoose';
 
 export default function RegisterForm() {
   const form = useForm<Register>({
@@ -27,7 +28,9 @@ export default function RegisterForm() {
     },
   });
 
-  function onSubmit(data: Register) {
+  async function onSubmit(data: Register) {
+    await new Promise((resolve) => setTimeout(resolve, 4000)); // Simulating an API request
+    console.log('Form data submitted:', data);
   }
 
   return (
@@ -103,6 +106,7 @@ export default function RegisterForm() {
             </FormItem>
           )}
         />
+        <p>{form.formState.isSubmitting}</p>
         <Button
           type="submit"
           className="w-full"
