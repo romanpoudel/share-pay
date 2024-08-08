@@ -3,7 +3,7 @@
 import { Input } from '@/components/ui/input';
 import registerAction from '@/app/actions/register-action';
 import { useForm } from 'react-hook-form';
-import { Register, registerSchema } from '@/schemas/user.schema';
+import { Login, loginSchema } from '@/schemas/user.schema';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Button } from './ui/button';
 import { Loader } from 'lucide-react';
@@ -16,18 +16,16 @@ import {
   FormMessage,
 } from './ui/form';
 
-export default function RegisterForm() {
-  const form = useForm<Register>({
-    resolver: zodResolver(registerSchema),
+export default function LoginForm() {
+  const form = useForm<Login>({
+    resolver: zodResolver(loginSchema),
     defaultValues: {
-      username: '',
       email: '',
       password: '',
-      confirmPassword: '',
     },
   });
 
-  async function onSubmit(data: Register) {
+  async function onSubmit(data: Login) {
     await new Promise((resolve) => setTimeout(resolve, 4000)); // Simulating an API request
     console.log('Form data submitted:', data);
   }
@@ -35,23 +33,6 @@ export default function RegisterForm() {
   return (
     <Form {...form}>
       <form className="space-y-4" onSubmit={form.handleSubmit(onSubmit)}>
-        <FormField
-          control={form.control}
-          name="username"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Username</FormLabel>
-              <FormControl>
-                <Input
-                  placeholder="Enter your name"
-                  className="mt-1"
-                  {...field}
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
         <FormField
           control={form.control}
           name="email"
@@ -87,24 +68,6 @@ export default function RegisterForm() {
             </FormItem>
           )}
         />
-        <FormField
-          control={form.control}
-          name="confirmPassword"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Confirm Password</FormLabel>
-              <FormControl>
-                <Input
-                  type="password"
-                  placeholder="Re-enter your password"
-                  className="mt-1"
-                  {...field}
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
         <Button
           type="submit"
           className="w-full"
@@ -113,7 +76,7 @@ export default function RegisterForm() {
           {form.formState.isSubmitting && (
             <Loader className="mr-4 animate-spin" size={20} />
           )}
-          Register
+          Sign in
         </Button>
       </form>
     </Form>
