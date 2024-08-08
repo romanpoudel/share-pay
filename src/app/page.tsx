@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
+import { ThemeToggle } from '@/components/theme-toggle';
 
 export default function Component() {
   return (
@@ -20,6 +21,7 @@ export default function Component() {
           <Button asChild>
             <Link href={'/auth/register'}>Sign Up</Link>
           </Button>
+          <ThemeToggle isDropDown={true} />
         </div>
       </header>
       <main className="flex flex-1 items-center justify-center">
