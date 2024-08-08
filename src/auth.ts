@@ -29,7 +29,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
           }
           const pwHash = saltAndHashPassword(password);
           const user = await getUserFromDb(email);
-          if(!user){
+          if (!user) {
             throw new CredentialsSignin('User not found');
           }
 

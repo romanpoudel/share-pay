@@ -1,17 +1,23 @@
-import Link from "next/link"
-import { Label } from "@/components/ui/label"
-import { Input } from "@/components/ui/input"
-import { Button } from "@/components/ui/button"
+import Link from 'next/link';
+import { Label } from '@/components/ui/label';
+import { Input } from '@/components/ui/input';
+import { Button } from '@/components/ui/button';
 
 export default function Component() {
   return (
     <div className="flex min-h-[100dvh] items-center justify-center bg-background px-4 py-12 sm:px-6 lg:px-8">
       <div className="w-full max-w-md space-y-6">
         <div className="text-center">
-          <h1 className="text-3xl font-bold tracking-tight text-foreground">Sign in to your account</h1>
+          <h1 className="text-3xl font-bold tracking-tight text-foreground">
+            Sign in to your account
+          </h1>
           <p>
-            Don&apos;t have an account?{" "}
-            <Link href="/auth/register" className="font-medium text-primary hover:underline" prefetch={false}>
+            Don&apos;t have an account?{' '}
+            <Link
+              href="/auth/register"
+              className="font-medium text-primary hover:underline"
+              prefetch={false}
+            >
               Register
             </Link>
           </p>
@@ -19,11 +25,21 @@ export default function Component() {
         <div className="space-y-4">
           <div>
             <Label htmlFor="email">Email</Label>
-            <Input id="email" type="text" placeholder="Enter your email" className="mt-1" />
+            <Input
+              id="email"
+              type="text"
+              placeholder="Enter your email"
+              className="mt-1"
+            />
           </div>
           <div>
             <Label htmlFor="password">Password</Label>
-            <Input id="password" type="password" placeholder="Enter your password" className="mt-1" />
+            <Input
+              id="password"
+              type="password"
+              placeholder="Enter your password"
+              className="mt-1"
+            />
           </div>
           <Button type="submit" className="w-full">
             Sign in
@@ -34,7 +50,9 @@ export default function Component() {
             <span className="w-full border-t" />
           </div>
           <div className="relative flex justify-center text-xs uppercase">
-            <span className="bg-background px-2 text-muted-foreground">Or continue with</span>
+            <span className="bg-background px-2 text-muted-foreground">
+              Or continue with
+            </span>
           </div>
         </div>
         <Button variant="outline" className="w-full">
@@ -43,10 +61,10 @@ export default function Component() {
         </Button>
       </div>
     </div>
-  )
+  );
 }
 
-function ChromeIcon(props:any) {
+function ChromeIcon(props: any) {
   return (
     <svg
       {...props}
@@ -66,5 +84,5 @@ function ChromeIcon(props:any) {
       <line x1="3.95" x2="8.54" y1="6.06" y2="14" />
       <line x1="10.88" x2="15.46" y1="21.94" y2="14" />
     </svg>
-  )
+  );
 }
