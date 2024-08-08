@@ -1,6 +1,6 @@
 import NextAuth, { CredentialsSignin } from 'next-auth';
 import Credentials from 'next-auth/providers/credentials';
-// Your own logic for dealing with plaintext password strings; be careful!
+
 import { saltAndHashPassword } from '@/utils/password';
 import { signInSchema } from './lib/zod';
 import { getUserFromDb } from './utils/db';
@@ -29,6 +29,9 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
           }
           const pwHash = saltAndHashPassword(password);
           const user = await getUserFromDb(email);
+          if(!user){
+            throw new CredentialsSignin('User not found');
+          }
 
           const isMatched = await compare(password, user.password);
 
