@@ -4,7 +4,6 @@ import dbConnect from '@/lib/db-connect';
 import User from '@/model/user.model';
 import { Register, registerSchema } from '@/schemas/user.schema';
 import { saltAndHashPassword } from '@/utils/password';
-import { redirect } from 'next/navigation';
 
 export default async function registerAction(data: Register) {
   const validatedFields = registerSchema.safeParse(data);

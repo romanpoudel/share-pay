@@ -16,10 +16,10 @@ export default function GoogleIcon(props: any) {
         gradientTransform="matrix(1 0 0 -1 0 66)"
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset="0" stop-color="#f4e9c3"></stop>
-        <stop offset=".219" stop-color="#f8eecd"></stop>
-        <stop offset=".644" stop-color="#fdf4dc"></stop>
-        <stop offset="1" stop-color="#fff6e1"></stop>
+        <stop offset="0" stopColor="#f4e9c3"></stop>
+        <stop offset=".219" stopColor="#f8eecd"></stop>
+        <stop offset=".644" stopColor="#fdf4dc"></stop>
+        <stop offset="1" stopColor="#fff6e1"></stop>
       </radialGradient>
       <path
         fill="url(#95yY7w43Oj6n2vH63j6HJa_fQDK2sCN4Eh1_gr1)"
@@ -34,10 +34,10 @@ export default function GoogleIcon(props: any) {
         gradientTransform="matrix(1 0 0 -1 0 66)"
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset="0" stop-color="#ff5840"></stop>
-        <stop offset=".007" stop-color="#ff5840"></stop>
-        <stop offset=".989" stop-color="#fa528c"></stop>
-        <stop offset="1" stop-color="#fa528c"></stop>
+        <stop offset="0" stopColor="#ff5840"></stop>
+        <stop offset=".007" stopColor="#ff5840"></stop>
+        <stop offset=".989" stopColor="#fa528c"></stop>
+        <stop offset="1" stopColor="#fa528c"></stop>
       </linearGradient>
       <path
         fill="url(#95yY7w43Oj6n2vH63j6HJb_fQDK2sCN4Eh1_gr2)"
@@ -52,9 +52,9 @@ export default function GoogleIcon(props: any) {
         gradientTransform="matrix(1 0 0 -1 0 66)"
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset="0" stop-color="#feaa53"></stop>
-        <stop offset=".612" stop-color="#ffcd49"></stop>
-        <stop offset="1" stop-color="#ffde44"></stop>
+        <stop offset="0" stopColor="#feaa53"></stop>
+        <stop offset=".612" stopColor="#ffcd49"></stop>
+        <stop offset="1" stopColor="#ffde44"></stop>
       </linearGradient>
       <path
         fill="url(#95yY7w43Oj6n2vH63j6HJc_fQDK2sCN4Eh1_gr3)"
@@ -69,9 +69,9 @@ export default function GoogleIcon(props: any) {
         gradientTransform="matrix(1 0 0 -1 0 66)"
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset="0" stop-color="#42d778"></stop>
-        <stop offset=".428" stop-color="#3dca76"></stop>
-        <stop offset="1" stop-color="#34b171"></stop>
+        <stop offset="0" stopColor="#42d778"></stop>
+        <stop offset=".428" stopColor="#3dca76"></stop>
+        <stop offset="1" stopColor="#34b171"></stop>
       </linearGradient>
       <path
         fill="url(#95yY7w43Oj6n2vH63j6HJd_fQDK2sCN4Eh1_gr4)"
@@ -86,11 +86,11 @@ export default function GoogleIcon(props: any) {
         gradientTransform="matrix(1 0 0 -1 0 66)"
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset="0" stop-color="#155cde"></stop>
-        <stop offset=".278" stop-color="#1f7fe5"></stop>
-        <stop offset=".569" stop-color="#279ceb"></stop>
-        <stop offset=".82" stop-color="#2cafef"></stop>
-        <stop offset="1" stop-color="#2eb5f0"></stop>
+        <stop offset="0" stopColor="#155cde"></stop>
+        <stop offset=".278" stopColor="#1f7fe5"></stop>
+        <stop offset=".569" stopColor="#279ceb"></stop>
+        <stop offset=".82" stopColor="#2cafef"></stop>
+        <stop offset="1" stopColor="#2eb5f0"></stop>
       </linearGradient>
       <path
         fill="url(#95yY7w43Oj6n2vH63j6HJe_fQDK2sCN4Eh1_gr5)"

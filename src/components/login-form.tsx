@@ -1,7 +1,6 @@
 'use client';
 
 import { Input } from '@/components/ui/input';
-import registerAction from '@/app/actions/register-action';
 import { useForm } from 'react-hook-form';
 import { Login, loginSchema } from '@/schemas/user.schema';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -15,8 +14,13 @@ import {
   FormLabel,
   FormMessage,
 } from './ui/form';
+import { useRouter } from 'next/navigation';
+import { useToast } from './ui/use-toast';
+import loginAction from '@/app/actions/login-action';
 
 export default function LoginForm() {
+  const router = useRouter();
+  const { toast } = useToast();
   const form = useForm<Login>({
     resolver: zodResolver(loginSchema),
     defaultValues: {
@@ -26,8 +30,19 @@ export default function LoginForm() {
   });
 
   async function onSubmit(data: Login) {
-    await new Promise((resolve) => setTimeout(resolve, 4000)); // Simulating an API request
-    console.log('Form data submitted:', data);
+    const response = await loginAction(data);
+    if (response?.success) {
+      toast({
+        description: response?.message,
+      });
+      router.push('/');
+    }
+    if (!response?.success) {
+      toast({
+        variant: 'destructive',
+        description: response?.message,
+      });
+    }
   }
 
   return (
