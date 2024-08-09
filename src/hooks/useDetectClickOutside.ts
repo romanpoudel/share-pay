@@ -8,6 +8,7 @@ type props = {
 const useDetectClickOutside = ({ ref, fn }: props) => {
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
+      e.stopPropagation();
       if (ref.current && !ref.current.contains(e.target as Node)) {
         fn();
       }

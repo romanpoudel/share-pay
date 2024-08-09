@@ -8,6 +8,7 @@ import { Button } from './ui/button';
 import { Input } from './ui/input';
 import useDetectClickOutside from '@/hooks/useDetectClickOutside';
 import ToolTip from './tool-tip';
+import Link from 'next/link';
 
 function Room() {
   const [roomName, setRoomName] = React.useState('Birthdays');
@@ -33,7 +34,10 @@ function Room() {
   };
 
   return (
-    <div className="cursor-pointer overflow-hidden rounded-lg bg-background shadow-lg dark:shadow-sm dark:outline">
+    <Link
+      href={'/room/1'}
+      className="cursor-pointer overflow-hidden rounded-lg bg-background shadow-lg dark:shadow-sm dark:outline"
+    >
       <div className="flex items-center justify-between p-4 dark:text-white">
         <div className="flex items-center gap-0.5">
           {isEditing ? (
@@ -102,7 +106,7 @@ function Room() {
           <div className="ml-auto font-medium">$50</div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
 
