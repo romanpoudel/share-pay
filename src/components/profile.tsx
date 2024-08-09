@@ -15,7 +15,6 @@ import SignOut from './logout-button';
 
 async function Profile() {
   const session = await auth();
-  console.log('🚀 ~ Avatar ~ session:', session);
   return (
     <>
       {session ? (
