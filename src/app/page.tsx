@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import { Button } from '@/components/ui/button';
 import { ThemeToggle } from '@/components/theme-toggle';
+import Profile from '@/components/profile';
 
 export default function Component() {
   return (
@@ -15,12 +15,7 @@ export default function Component() {
           <span className="sr-only">Sharing Money with Friends</span>
         </Link>
         <div className="ml-auto flex gap-2">
-          <Button variant="outline" asChild>
-            <Link href={'/auth/login'}>Sign In</Link>
-          </Button>
-          <Button asChild>
-            <Link href={'/auth/register'}>Sign Up</Link>
-          </Button>
+          <Profile />
           <ThemeToggle isDropDown={true} />
         </div>
       </header>
