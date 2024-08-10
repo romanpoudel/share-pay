@@ -16,19 +16,23 @@ function Room() {
   const inputRef = React.useRef<HTMLInputElement>(null);
 
   const handleRoomNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    e.stopPropagation();
     setIsEditing(true);
     setRoomName(e.target.value);
   };
 
-  const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
-    if (event.key === 'Enter') {
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    e.stopPropagation();
+    if (e.key === 'Enter') {
       setIsEditing(false);
     }
   };
 
   useDetectClickOutside({ ref: inputRef, fn: () => setIsEditing(false) });
 
-  const handleEditClick = () => {
+  const handleEditClick: React.MouseEventHandler<HTMLButtonElement> = (e) => {
+    e.stopPropagation();
+    e.preventDefault();
     setIsEditing(true);
     setTimeout(() => inputRef.current?.focus(), 0);
   };

@@ -14,7 +14,7 @@ const Header = () => {
         <MountainIcon className="size-6" />
         <span className="sr-only">Sharing Money with Friends</span>
       </Link>
-      <div className="ml-auto flex gap-2">
+      <div className="ml-auto flex items-center gap-2">
         <Profile />
         <ThemeToggle isDropDown={true} />
       </div>

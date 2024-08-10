@@ -2,6 +2,7 @@ import { auth } from '@/auth';
 import Link from 'next/link';
 import React from 'react';
 import Room from './room';
+import { Button } from './ui/button';
 
 async function Dashboard() {
   const session = await auth();
@@ -29,13 +30,16 @@ async function Dashboard() {
     );
   }
   return (
-    <div className="grid grid-cols-1 gap-x-8 gap-y-14 p-4 sm:p-6 md:grid-cols-2 md:p-8 lg:grid-cols-3">
-      <Room />
-      <Room />
-      <Room />
-      <Room />
-      <Room />
-      <Room />
+    <div className="flex flex-col items-center">
+      <div className="grid w-full grid-cols-1 gap-x-8 gap-y-14 p-4 sm:p-6 md:grid-cols-2 md:p-8 lg:grid-cols-3">
+        <Room />
+        <Room />
+        <Room />
+        <Room />
+        <Room />
+        <Room />
+      </div>
+      <Button>Add Room</Button>
     </div>
   );
 }

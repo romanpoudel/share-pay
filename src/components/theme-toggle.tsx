@@ -31,7 +31,7 @@ export function ThemeToggle({ isDropDown = false }: { isDropDown?: boolean }) {
         <DropdownMenuTrigger asChild>
           <Button
             variant="ghost"
-            className="font-base mb-2 inline-flex h-9 w-full items-center justify-start gap-2 whitespace-nowrap rounded-md px-2 text-sm transition-colors focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+            className="font-base inline-flex h-9 w-full items-center justify-start gap-2 whitespace-nowrap rounded-md px-2 text-sm transition-colors focus:outline-none disabled:pointer-events-none disabled:opacity-50"
           >
             <Sun
               className={cn(
