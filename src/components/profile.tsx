@@ -11,7 +11,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import SignOut from './logout-button';
+import SignOut from './features/auth/logout-button';
 
 async function Profile() {
   const session = await auth();

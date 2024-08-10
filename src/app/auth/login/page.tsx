@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import LoginForm from '@/components/login-form';
 import GoogleIcon from '@/components/google-icon';
+import LoginForm from '@/components/features/auth/login-form';
 
 export default function Login() {
   return (
