@@ -4,7 +4,6 @@ import { Input } from '@/components/ui/input';
 import { useForm } from 'react-hook-form';
 import { Login, loginSchema } from '@/schemas/user.schema';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Button } from './ui/button';
 import { Loader } from 'lucide-react';
 import {
   Form,
@@ -13,10 +12,11 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from './ui/form';
+} from '@/components/ui/form';
 import { useRouter } from 'next/navigation';
-import { useToast } from './ui/use-toast';
 import loginAction from '@/app/actions/login-action';
+import { Button } from '@/components/ui/button';
+import { useToast } from '@/components/ui/use-toast';
 
 export default function LoginForm() {
   const router = useRouter();

@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import RegisterForm from '@/components/register-form';
 import GoogleIcon from '@/components/google-icon';
+import RegisterForm from '@/components/features/auth/register-form';
 
 export default function Register() {
   return (
