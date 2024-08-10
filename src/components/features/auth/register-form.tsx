@@ -5,7 +5,7 @@ import registerAction from '@/app/actions/register-action';
 import { useForm } from 'react-hook-form';
 import { Register, registerSchema } from '@/schemas/user.schema';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Button } from './ui/button';
+import { Button } from '@/components/ui/button';
 import { Loader } from 'lucide-react';
 import {
   Form,
@@ -14,9 +14,9 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from './ui/form';
+} from '@/components/ui/form';
 import { useRouter } from 'next/navigation';
-import { useToast } from './ui/use-toast';
+import { useToast } from '@/components/ui/use-toast';
 
 export default function RegisterForm() {
   const router = useRouter();
