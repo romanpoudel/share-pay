@@ -44,7 +44,13 @@ const TablesRow = ({ product }: { product: Product }) => {
             <ChevronDownIcon className="h-4 w-4" />
           </Button>
         </TableCell>
-        <TableCell className="text-right">
+        <TableCell className="flex justify-end gap-4 text-right">
+          <Button
+            variant={'secondary'}
+            className="hover:bg-primary hover:text-white hover:dark:text-background"
+          >
+            Settle
+          </Button>
           <Button variant={'outline'}>View All</Button>
         </TableCell>
       </TableRow>
