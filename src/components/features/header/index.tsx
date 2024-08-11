@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
+import { ThemeToggle } from '@/components/theme-toggle';
 import Profile from './profile';
-import { ThemeToggle } from './theme-toggle';
 
 const Header = () => {
   return (

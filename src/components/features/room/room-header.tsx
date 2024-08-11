@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { CircleArrowDown, CircleArrowUp } from 'lucide-react';
+import { CircleArrowDown, CircleArrowUp, Users } from 'lucide-react';
+import AddPayment from './add-payment';
 
 const RoomHeader = () => {
   return (
@@ -18,7 +19,13 @@ const RoomHeader = () => {
           </div>
         </div>
       </div>
-      <Button>Add mates</Button>
+      <div className="flex gap-4">
+        <AddPayment />
+        <Button variant={'outline'}>
+          <Users className="mr-2 size-5" />
+          Add mates
+        </Button>
+      </div>
     </div>
   );
 };

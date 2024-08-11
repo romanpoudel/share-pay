@@ -4,10 +4,10 @@ import React from 'react';
 import { Badge } from '@/components/ui/badge';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { Pencil } from 'lucide-react';
-import { Button } from './ui/button';
-import { Input } from './ui/input';
+import { Button } from '../../ui/button';
+import { Input } from '../../ui/input';
 import useDetectClickOutside from '@/hooks/useDetectClickOutside';
-import ToolTip from './tool-tip';
+import ToolTip from '../../tool-tip';
 import Link from 'next/link';
 
 function Room() {
